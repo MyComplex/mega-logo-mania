@@ -1,0 +1,33 @@
+{
+  "name": "mega-logo-mania",
+  "version": "0.0.1",
+  "description": "This application generates an SVG logo",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MyComplex/mega-logo-mania.git"
+  },
+  "keywords": [
+    "SVG",
+    "logo",
+    "generator"
+  ],
+  "author": "Jesus Santos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MyComplex/mega-logo-mania/issues"
+  },
+  "homepage": "https://github.com/MyComplex/mega-logo-mania#readme",
+  "dependencies": {
+    "inquirer": "^9.2.8"
+  },
+  "devDependencies": {
+    "jest": "^29.6.1"
+  }
+}
