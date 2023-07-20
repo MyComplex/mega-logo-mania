@@ -132,5 +132,7 @@ dist
 # Debug log from npm
 npm-debug.log
 
+pnpm-lock.yaml
+
 # OSX hidden files
 .DS_Store
