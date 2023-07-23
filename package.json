@@ -25,7 +25,8 @@
   },
   "homepage": "https://github.com/MyComplex/mega-logo-mania#readme",
   "dependencies": {
-    "inquirer": "^9.2.8"
+    "inquirer": "^9.2.8",
+    "inquirer-maxlength-input-prompt": "^1.0.2"
   },
   "devDependencies": {
     "jest": "^29.6.1"
