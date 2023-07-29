@@ -29,7 +29,8 @@ inquirer
             type: 'list',
             name: 'shape',
             message: 'Select the shape to display on your logo.',
-            choices: ['Circle', 'Triangle', 'Square']
+            choices: ['Circle', 'Triangle', 'Square'],
+            default: 'Circle'
         },
         {
             type: 'input',
@@ -39,10 +40,13 @@ inquirer
         }
     ])
     .then((answers) => {
+        console.log(answers);
         /* Write to logo.svg file */
         fs.writeFileSync('logo.svg', `
         <svg version='1.1' width='300' height='200' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
-
+            <g>
+                
+            </g>
         </svg>
         `);
     })
