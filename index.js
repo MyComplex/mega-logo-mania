@@ -21,8 +21,8 @@ inquirer
         },
         {
             type: 'input',
-            name: 'initials-color',
-            message: 'Enter the color of your logo letters:',
+            name: 'letterColor',
+            message: 'Please enter the color of your logo letters by either a keyword such as "blue" or a hex value such as "#0000ff":',
             default: '#a5acaf'
         },
         {
@@ -34,21 +34,26 @@ inquirer
         },
         {
             type: 'input',
-            name: 'shape-color',
-            message: 'Enter the color of your logo shape:',
+            name: 'shapeColor',
+            message: 'Please enter the color of your logo shape by either a keyword such as "green" or a hex value such as "#008000":',
             default: '#004c54'
         }
     ])
     .then((answers) => {
-        console.log(answers);
+        if (answers.shape === 'Circle') {
+            genLogo = new Circle(answers.shapeColor, answers.letters, answers.letterColor);
+        }
+        else if (answers.shape === 'Triangle') {
+            genLogo = new Triangle(answers.shapeColor, answers.letters, answers.letterColor);
+        }
+        else {
+            genLogo = new Square(answers.shapeColor, answers.letters, answers.letterColor);
+        }
+        
         /* Write to logo.svg file */
-        fs.writeFileSync('logo.svg', `
-        <svg version='1.1' width='300' height='200' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
-            <g>
-                
-            </g>
-        </svg>
-        `);
+        fs.writeFile('./examples/logo.svg', genLogo.renderLogo(), (err) => {
+            err ? console.log(err) : console.log('Generated logo.svg');
+        });
     })
     .catch(err => {
         console.log('An error occurred: ' + err);
